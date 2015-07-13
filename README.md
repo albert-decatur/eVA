@@ -32,6 +32,7 @@ None of these excellent tools could quit get the parsing job right, possibly the
 * [csvquote](https://github.com/dbro/csvquote)
 * [csvclean](https://github.com/onyxfish/csvkit)
 * Gnumeric's ssconvert
+* OpenRefine
 * Libreoffice --headless
   * I got desperate!
 
