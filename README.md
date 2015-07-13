@@ -15,11 +15,11 @@ To get the >4GB tab separated values file (TSV) with the 14 million records of V
 
 ```bash
 # run git_unsplitbig.sh from the submodule git-split-big to get 7z back
-submodules/git-split-big/git_unsplitbig.sh scratch/ eVA_healthyRecords_2015-07-12.7z
+submodules/git-split-big/git_unsplitbig.sh output/ eVA_healthyRecords_2015-07-12.7z
 # to make sure the file is correct you can check the output's md5sum against the one found in .gitsplitbig.md5
-md5sum scratch/eVA_healthyRecords_2015-07-12.7z
+md5sum output/eVA_healthyRecords_2015-07-12.7z
 # uncompress the 7z file to get the TSV
-7z x scratch/eVA_healthyRecords_2015-07-12.7z
+7z x output/eVA_healthyRecords_2015-07-12.7z
 ```
 
 All that git-split-big does is split and unsplit files too large to otherwise commit to github.
