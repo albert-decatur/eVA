@@ -9,6 +9,17 @@ Problem with guessing count of records is tricky embedded newlines and occaisona
 Source tables from eVA [here](https://eva.virginia.gov/pages/eva-opendatasets.htm).  
 NB: FY2015 _shouldn't_ be partial as data were collected 2015-07-12, and VA's fiscal calendar ends June 30 but I have not confirmed.
 
+### data
+
+To get the >4GB tab separated values file (TSV) with the 14 million records of VA spending, use [git-split-big](https://github.com/albert-decatur/git-split-big) to recover a 7z file from the directory of zips called eVA_healthyRecords_2015-07-12.7z_zips:
+
+```bash
+
+
+```
+
+All that git-split-big does is split and unsplit files too large to otherwise commit to github.
+It can be found under the submodules directory.
 
 ### method
 
