@@ -16,6 +16,7 @@ To get the >4GB tab separated values file (TSV) with the 14 million records of V
 ```bash
 
 
+# to make sure the file is correct you can check the output's md5sum against the one found in .gitsplitbig.md5
 ```
 
 All that git-split-big does is split and unsplit files too large to otherwise commit to github.
