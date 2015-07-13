@@ -1,0 +1,3 @@
+[submodule "submodules/git-split-big"]
+	path = submodules/git-split-big
+	url = https://github.com/albert-decatur/git-split-big

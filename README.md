@@ -6,30 +6,31 @@ Cleaned up from 15 messy tables.
 Was able to salvage >14 million records out of <18 million.  
 Problem with guessing count of records is tricky embedded newlines and occaisonal improper quoting.
 
-[source](https://eva.virginia.gov/pages/eva-opendatasets.htm)
-NB: FY2015 should _not_ be partial as data were collected 2015-07-12, and VA's fiscal calendar ends June 30.
+Source tables from eVA [here](https://eva.virginia.gov/pages/eva-opendatasets.htm).  
+NB: FY2015 _shouldn't_ be partial as data were collected 2015-07-12, and VA's fiscal calendar ends June 30 but I have not confirmed.
 
 
 ### method
 
 None of these excellent tools could quit get the parsing job right, possibly the fault of the records themselves:
 
-* Libreoffice --headless
-* Gnumeric's ssconvert
 * [csvquote](https://github.com/dbro/csvquote)
 * [csvclean](https://github.com/onyxfish/csvkit)
+* Gnumeric's ssconvert
+* Libreoffice --headless
+  * I got desperate!
 
 Method ultimately employed to identify acceptable records was to
  
 1. check for right number of columns
 1. of that, get a list of unique IDs
 1. for the list of IDs, pull out any that look suspicious
-  1. ie, no just capital letters, numbers, and special characters
+  1. ie, not just capital letters, numbers, and special characters
 1. do a little manual curation of this list
   1. just a few hundred entries - we got lucky!
 1. from the suspicious ID field entries (eg "HP Laserjet . . ."), 
   1. get the record number they occur at with "grep -n"
-  1. pull out pull out those records by number with sed
+  1. pull out those records by number with sed
   1. match the inserve of the unwanted records and write back to file
     1. this is a low memory approach that works well when scanning plain text a multiple the size of your RAM
 
